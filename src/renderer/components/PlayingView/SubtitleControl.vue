@@ -310,10 +310,8 @@ export default {
         }, 10);
         document.querySelector('.scrollScope').scrollTop = 0;
         this.$bus.$emit('refresh-subtitles');
-      } else {
-        if (!process.mas) {
-          this.$bus.$emit('privacy-confirm');
-        }
+      } else if (!process.mas) {
+        this.$bus.$emit('privacy-confirm');
       }
     },
     orify(...args) {

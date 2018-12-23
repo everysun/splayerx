@@ -311,7 +311,9 @@ export default {
         document.querySelector('.scrollScope').scrollTop = 0;
         this.$bus.$emit('refresh-subtitles');
       } else {
-        this.$bus.$emit('privacy-confirm');
+        if (!process.mas) {
+          this.$bus.$emit('privacy-confirm');
+        }
       }
     },
     orify(...args) {
